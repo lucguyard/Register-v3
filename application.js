@@ -1,13 +1,18 @@
+require('dotenv').config();
+
 const express = require("express");
 const app = express();
-require('dotenv').config();
-const fs = require("fs").promises;
+const bodyparser = require("body-parser");
 const mongoose = require("mongoose");
 
-//Connect with 
-const db = require("./model/mongo").MongoURI;
 
-mongoose.connect( db ,{ useNewUrlParser: true, useUnifiedTopology: true })
+
+
+//Connect with 
+const db = require('./model/mongo.js');
+
+
+mongoose.connect( db.x.MongoURI ,{ useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))
   .catch(() => console.log('Connexion à MongoDB échouée !'));
 
@@ -16,9 +21,9 @@ mongoose.connect( db ,{ useNewUrlParser: true, useUnifiedTopology: true })
 app.set('views' , 'hard-page')
 app.set('view engine' , 'ejs')
 
-
+//Use BodyParser
+app.use(express.urlencoded({extended : false}));
 //Index 
-
 app.get("/index", (req,res) => {
     res.render('index');
 })
