@@ -2,8 +2,9 @@ require('dotenv').config();
 const mongoose = require("mongoose");
 
 const x = {
-    MongoURI : 'mongodb+srv://user_lg:' + process.env.MDP + '@cluster0.wawol.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+    MongoURI : 'mongodb+srv://user_lg:'+ process.env.MDP + '@cluster0.wawol.mongodb.net/MyfirstDatabas?retryWrites=true&w=majority'
 }
+
 const schemaUser = new mongoose.Schema({
     name: {
         type: String,
@@ -15,6 +16,6 @@ const schemaUser = new mongoose.Schema({
     }
 });
 
-const User = mongoose.model('User', schemaUser);
+const users = mongoose.model('testato', schemaUser);
 
-module.exports = {User, x }; 
+module.exports = {users, x }; 

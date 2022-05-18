@@ -4,9 +4,7 @@ const fonction = require("../fonction/fonc.js");
 
 route
     .route("/register")
-    .post(async (req, res) => {
-        res.end("hello boy")
-    })
+    .post(fonction.postRegister)
     .get(fonction.getRegister);
 
 route

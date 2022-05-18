@@ -12,7 +12,7 @@ const mongoose = require("mongoose");
 const db = require('./model/mongo.js');
 
 
-mongoose.connect( db.x.MongoURI ,{ useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect( db.x.MongoURI ,{ useNewUrlParser: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))
   .catch(() => console.log('Connexion à MongoDB échouée !'));
 
