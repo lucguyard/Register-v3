@@ -14,6 +14,7 @@ const schemaUser = new mongoose.Schema({
         type: String,
         required : true
     }
+    
 });
 
 const users = mongoose.model('testato', schemaUser);
